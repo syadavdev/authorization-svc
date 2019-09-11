@@ -2,6 +2,6 @@ server:
   port: ${SERVER_PORT:9094}
 oauth2:
   jwt:
-    jks: classpath:clientKeyStore
-    keypair: ${JWT_KEYPAIR:jwtKeypair}
-    keypass: ${JWT_KEYPASS:P@ssw11rd}
+    jks: classpath:jwt.jks
+    keypair: ${JWT_KEYPAIR:jwt}
+    keypass: ${JWT_KEYPASS:P@ssword}
