@@ -1,7 +1,29 @@
 server:
   port: ${SERVER_PORT:9094}
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://${SERVER_URL:localhost}:3306/authorization_svc?useUnicode=yes&characterEncoding=UTF-8}
+    driver-class-name: ${DB_DRIVER_CLASS:com.mysql.jdbc.Driver}
+    username: ${DB_USER:root}
+    password: ${DB_PASS:root}
+  jpa:
+    show-sql: true
+  flyway:
+    locations: classpath:/db/migration
 oauth2:
   jwt:
     jks: classpath:jwt.jks
     keypair: ${JWT_KEYPAIR:jwt}
     keypass: ${JWT_KEYPASS:P@ssword}
+---
+spring:
+  profiles: test
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/authorization_svc?useUnicode=yes&characterEncoding=UTF-8}
+    driver-class-name: ${DB_DRIVER_CLASS:com.mysql.jdbc.Driver}
+    username: ${DB_USER:root}
+    password: ${DB_PASS:}
+  jpa:
+    show-sql: true
+  flyway:
+    locations: classpath:/db/migration
