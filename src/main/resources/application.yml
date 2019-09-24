@@ -19,8 +19,8 @@ oauth2:
 spring:
   profiles: test
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/authorization_svc?useUnicode=yes&characterEncoding=UTF-8}
-    driver-class-name: ${DB_DRIVER_CLASS:com.mysql.jdbc.Driver}
+    url: ${DB_URL:jdbc:h2:mem:users;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE}
+    driver-class-name: ${DB_DRIVER_CLASS:org.h2.Driver}
     username: ${DB_USER:root}
     password: ${DB_PASS:}
   jpa:
