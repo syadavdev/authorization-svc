@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: authorization-svc
+  cloud:
+    config:
+      uri: http://${SERVER_URL:localhost}:9095
+  security:
+    enabled: false

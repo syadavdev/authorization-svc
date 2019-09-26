@@ -5,7 +5,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         for(String role : roles){
             authorities.add(new SimpleGrantedAuthority(role));
         }
-        return new User("Sandeep", "123456", true, true, true, true, authorities);
+        return new User("Sandeep", "$2a$04$wYagTuKZoKQyvAMlOwnlseVD.WiOOUROnjGCHm7xQhJrI5shv/9Du", true, true, true, true, authorities);
     }
 
 }
