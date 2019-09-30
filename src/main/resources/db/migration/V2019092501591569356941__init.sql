@@ -15,4 +15,4 @@ CREATE TABLE `oauth_client_details` (
   PRIMARY KEY (`client_id`)
 ) ENGINE=InnoDB;
 
-INSERT INTO `oauth_client_details` VALUES ('sandi','','P@ssw111rd','read,write','password,authorization_code,refresh_token',NULL,NULL,1800,3600,NULL,'1');
+INSERT INTO `oauth_client_details` VALUES ('sandi','','{bcrypt}$2a$04$V.yyb1kD9GxdkfMHRkeXwuK3BLSbzktV01OHlETUrWmO60UVlItey','read,write','password,authorization_code,refresh_token',NULL,NULL,1800,3600,NULL,'1');
